@@ -2,6 +2,9 @@
     <div ng-show="isLoading" class="ngw-spinner ngw-spinner-outer">
         <img src="./ng-weather/images/ajax-loader.gif" alt="" />
     </div>
+    <div class="ngw-col" ng-if="isError">
+        <span ng-bind="errorMessage"></span>
+    </div>
     <div ng-if="!isError">
         <div class="ngw-col">
             <div class="ngw-icon"><i class="owf owf-{{weatherCode}}" title="{{weather}}"></i></div>
@@ -17,12 +20,9 @@
                 <span ng-bind="updatedAtDate"></span>
             </div>
         </div>
-    </div>
-    <div class="ngw-col" ng-if="isError">
-        <span ng-bind="errorMessage"></span>
-    </div>
+    </div>    
     <div class="ngw-buttons">
-        <span class="glyphicon glyphicon glyphicon-wrench ngw-wrench" ng-click="openSettings()"></span>
+        <span class="glyphicon glyphicon glyphicon-wrench ngw-wrench" ng-click="showSettings = true"></span>
         <span class="glyphicon glyphicon-refresh ngw-reload" ng-click="reload()"></span>
     </div>
     <div class="ngw-clearfix">
@@ -31,9 +31,9 @@
         <div class="ngw-settings-opacity"></div>
         <div class="ngw-settings-content">
             <form ng-submit="setLocation()">
-                <label for="newCity">Enter new city</label>
+                <label for="newCity">Enter city</label>
                 <br />
-                <input id="newCity" class="input ngw-input" type="text" ng-model="newCity"  autofocus=""/>
+                <input id="newCity" class="input ngw-input" type="text" ng-model="newCity" autofocus=""/>
                 <br />
                 <button type="submit" class="btn" ng-disabled="!newCity">OK</button>
             </form>
