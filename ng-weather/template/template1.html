@@ -1,4 +1,7 @@
-<div class="ngw-container ngw-row {{weather}}" ngw-spinner="isLoading">
+<div class="ngw-container ngw-row {{weather}}">
+    <div ng-show="isLoading" class="ngw-spinner ngw-spinner-outer">
+        <img src="./ng-weather/images/ajax-loader.gif" alt="" />
+    </div>
     <div ng-if="!isError">
         <div class="ngw-col">
             <div class="ngw-icon"><i class="owf owf-{{weatherCode}}" title="{{weather}}"></i></div>
