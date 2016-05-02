@@ -1,19 +1,4 @@
-angular.module("ngWeather", [])
-        .directive("ngwSpinner", function () {
-            return {
-                restrict: 'A',
-                scope: false,
-                link: function (scope, element, attrs) {
-                    var loadingLayer = angular.element('<div class="ngw-spinner">'
-                            + '<img src="./ng-weather/images/ajax-loader.gif" />'
-                            + '</div>');
-                    element.append(loadingLayer).addClass("ngw-spinner-outer");
-                    scope.$watch(attrs.ngwSpinner, function (value) {
-                        loadingLayer.toggleClass('ng-hide', !value);
-                    });
-                }
-            };
-        })
+angular.module("ngWeather", [])        
         .directive("ngWeather", function () {
             return {
                 restrict: "E",
@@ -124,6 +109,6 @@ angular.module("ngWeather", [])
 
                                 $scope.reload();
                             }],
-                templateUrl: "./ng-weather/template/template2.html"
+                templateUrl: "./ng-weather/template/template1.html"
             };
         });
