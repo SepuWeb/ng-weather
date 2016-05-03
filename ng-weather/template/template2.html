@@ -1,6 +1,6 @@
-<div class="ngw-container ngw-row {{weather}}">
-    <div ng-show="isLoading" class="ngw-spinner ngw-spinner-outer">
-        <img src="./ng-weather/images/ajax-loader.gif" alt="" />
+<div class="ngw-container ngw-row {{weather}}" ngw-spinner="isLoading">
+    <div class="ngw-spinner" ng-show="isLoading">
+        <img src="./ng-weather/images/ajax-loader.gif" />
     </div>
     <div ng-if="!isError">
         <div class="ngw-col">

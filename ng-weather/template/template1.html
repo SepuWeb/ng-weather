@@ -1,18 +1,15 @@
-<div class="ngw-container ngw-row {{weather}}">
-    <div ng-show="isLoading" class="ngw-spinner ngw-spinner-outer">
-        <img src="./ng-weather/images/ajax-loader.gif" alt="" />
-    </div>
-    <div class="ngw-col" ng-if="isError">
-        <span ng-bind="errorMessage"></span>
+<div class="ngw-container ngw-spinner-outer ngw-row {{weather}}" ng-class="{'Error': isError}">
+    <div class="ngw-spinner" ng-show="isLoading">
+        <img src="./ng-weather/images/ajax-loader.gif" />
     </div>
     <div ng-if="!isError">
         <div class="ngw-col">
             <div class="ngw-icon"><i class="owf owf-{{weatherCode}}" title="{{weather}}"></i></div>
         </div>
         <div class="ngw-col">
-            <div class="ngw-temp"><span ng-bind="temperature || '-'"></span>&nbsp;<span ng-bind="unit"></span></div>
+            <div class="ngw-temp"><span ng-bind="temperature || '-'"></span>&nbsp;<span ng-bind="unit.symbol"></span></div>
             <div class="ngw-location">
-                <i class="glyphicon glyphicon-pushpin" aria-label="Location"></i><span ng-bind="city"></span>
+                <span class="ngw-pin" title="Location"></span><span ng-bind="city"></span>
             </div>
             <div class="ngw-updatedAt">
                 <span ng-bind="updatedAtText"></span>
@@ -20,22 +17,29 @@
                 <span ng-bind="updatedAtDate"></span>
             </div>
         </div>
-    </div>    
-    <div class="ngw-buttons">
-        <span class="glyphicon glyphicon glyphicon-wrench ngw-wrench" ng-click="showSettings = true"></span>
-        <span class="glyphicon glyphicon-refresh ngw-reload" ng-click="reload()"></span>
+    </div>
+    <div class="ngw-messagesbox" ng-if="isError">
+        <span ng-bind="errorMessage"></span>
+    </div>
+    <div class="ngw-buttons" ng-hide="showSettings">
+        <span class="ngw-wrench" ng-click="showSettings = true"></span>
+        <span class="ngw-reload" ng-click="reload()"></span>
     </div>
     <div class="ngw-clearfix">
     </div>
     <div class="ngw-settings" ng-show="showSettings">
         <div class="ngw-settings-opacity"></div>
         <div class="ngw-settings-content">
+            <span class="ngw-close" ng-click="showSettings=false"></span>
             <form ng-submit="setLocation()">
-                <label for="newCity">Enter city</label>
+                <label for="newCity" ng-bind="newLocationLabel"></label>
                 <br />
-                <input id="newCity" class="input ngw-input" type="text" ng-model="newCity" autofocus=""/>
+
+                <input id="newCity" class="input ngw-input" type="text" ng-model="newCity" autofocus="" />
                 <br />
-                <button type="submit" class="btn" ng-disabled="!newCity">OK</button>
+                <select class="ngw-select" ng-model="unit" ng-options="u as u.symbol for u in units" />
+                <label for="ngw-submit" class="ngw-confirm"></label>
+                <button id="ngw-submit" type="submit" class="ng-hide"></button> <!--  ng-disabled="!newCity"-->
             </form>
         </div>
     </div>
