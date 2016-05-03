@@ -1,139 +1,177 @@
 .ng-hide{
-	display: none;
+    display: none;
 }
 .ngw-clearfix{
-	clear: both;
+    clear: both;
 }
 .ngw-row{
-	border-radius: 10px;
-	box-shadow: 5px 10px 30px 0px #e2e2e2;
-	padding: 10px;
-	clear: both;
-	position: relative;
-	min-height: 100px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 30px 0px #e2e2e2;
+    padding: 10px;
+    clear: both;
+    position: relative;
+    min-height: 100px;
+}
+.ngw-messagesbox{
+    float: left;
+    width: 100%;
 }
 .ngw-buttons{
-	position: absolute;
-	bottom: 15px;
-	right: 15px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
 }
 .ngw-settings{
-	position: absolute;
-	width: 100%;
-	top: 0;
-	left: 0;
-	height: 100%;
-	border-radius: 10px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 10px;
 }
 .ngw-settings-opacity{
-	position: absolute;
-	background: #000;
-	width: 100%;
-	height: 100%;
-	opacity: 0.7;
-	border-radius: 10px;
+    position: absolute;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    border-radius: 10px;
 }
 .ngw-settings-content {
-	text-align: center;
-	position: absolute;
-	z-index: 10;
-	width: 100%;
-	max-height: 100%;
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
 }
-.ngw-settings-content button[type="submit"]{
-	background-color: #fce528;
-	padding: 5px 5px;
-	margin-top: 5px;
-}
-.ngw-settings-content input[type="text"]{
-	background: #FFF;
-	color: #000;
-	opacity: 1;
-	text-align: center;
+
+.ngw-settings-content input[type="text"],
+.ngw-settings-content select{
+    background: #FFF;
+    color: #000;
+    opacity: 1;
+    text-align: center;
+    margin-bottom: 10px;
 }
 .ngw-reload, .ngw-wrench{
-	float: right;
-	cursor: pointer;
-	margin-right: 5px;
+    float: right;
+    cursor: pointer;
+    margin-right: 5px;
+    background: url("../images/icons.png");
+    width: 20px;
+    height: 20px;
 }
-.ngw-icons:hover > *{
-	line-height: 18px;
+.ngw-close{
+    background: url("../images/icons.png");
+    position: absolute;
+    background-position: 40px 0;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    cursor: pointer;
 }
-.ngw-reload:hover, .ngw-wrench:hover{
-	font-size: 18px;
+.ngw-confirm{
+    background: url("../images/icons.png");
+    position: absolute;
+    background-position: 20px 0;
+    width: 20px;
+    height: 20px;
+    bottom: 10px;
+    right: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+.ngw-pin{
+    background: url("../images/icons.png");
+    background-position: 0 0;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.ngw-reload{
+    background-position: 80px 0;
+}
+.ngw-wrench{
+    background-position: 60px 0;
 }
 .ngw-col{
-	float: left;
+    float: left;
+}
+.ngw-container.Error{
+    background: url("../images/warning.jpg");
+    background-size: 100%;
+    color: #FFF;
+    background-position: center;
 }
 .ngw-container.Rain{
-	background: url("../images/rain.jpg");
-	background-size: 100%;
-	color: #FFF;
+    background: url("../images/rain.jpg");
+    background-size: 100%;
+    color: #FFF;
 }
 .ngw-container.Clear, .ngw-container.Sun{
-	background-image: url("../images/sun.jpg");
-	background-size: 100%;
-	background-position: center;
-	color: #FFF;
+    background-image: url("../images/sun.jpg");
+    background-size: 100%;
+    background-position: center;
+    color: #FFF;
 }
 .ngw-container.Clouds{
-	background: url("../images/clouds.jpg");
-	background-size: 100%;
-	color: #FFF;
+    background: url("../images/clouds.jpg");
+    background-size: 100%;
+    color: #FFF;
 }
 .ngw-container.Haze{
-	background: url("../images/haze.jpg");
-	background-size: 100%;
-	color: #000;
-	background-position: center;
+    background: url("../images/haze.jpg");
+    background-size: 100%;
+    color: #000;
+    background-position: center;
 }
 .ngw-container.Haze .ngw-buttons{
-	color: #FFF;
+    color: #FFF;
 }
 .ngw-container.Mist{
-	background: url("../images/mist.jpg");
-	background-size: 100%;
-	color: #FFF;
+    background: url("../images/mist.jpg");
+    background-size: 100%;
+    color: #FFF;
 }
 .ngw-container:before {
-	display: table;
-	content: " ";
+    display: table;
+    content: " ";
 }
 .ngw-spinner{
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: #FFF;
-	z-index: 5;
-	width: 100%;
-	height: 100%;
-	opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #FFF;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
 }
-.ngw-spinner > images {
-	top: 50%;
-	left: 50%;
-	margin: -16px;
-	position: absolute;
-	z-index: 10;
+.ngw-spinner > img {
+    top: 50%;
+    left: 50%;
+    margin: -16px;
+    position: absolute;
+    z-index: 10;
 }
 .ngw-icon, .ngw-temp{
-	text-align: right;
+    text-align: right;
 }
 .ngw-icon > i {
-	font-size: 70px;
+    font-size: 70px;
 }
 .ngw-temp > span{
-	font-size: 30px;
-	font-weight: bold;
+    font-size: 30px;
+    font-weight: bold;
 }
 .ngw-location {
-	text-align: right;
-}
-.ngw-location > span {
-	font-size: 15px;
+    text-align: right;
 }
 .ngw-updatedAt{
-	text-transform: uppercase;
-	text-align: right;
-	font-size: 10px;
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 10px;
 }
