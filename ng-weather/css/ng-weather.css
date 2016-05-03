@@ -44,7 +44,6 @@
     width: 100%;
     height: 100%;
 }
-
 .ngw-settings-content input[type="text"],
 .ngw-settings-content select{
     background: #FFF;
@@ -117,19 +116,24 @@
     background-position: center;
     color: #FFF;
 }
+.ngw-container.Clear span, .ngw-container.Sun span,
+.ngw-container.Clouds span, .ngw-container.Mist span
+{
+    color: #FFF;
+}
 .ngw-container.Clouds{
     background: url("../images/clouds.jpg");
     background-size: 100%;
     color: #FFF;
+}
+.ngw-container.Haze span{
+    color: #000;
 }
 .ngw-container.Haze{
     background: url("../images/haze.jpg");
     background-size: 100%;
     color: #000;
     background-position: center;
-}
-.ngw-container.Haze .ngw-buttons{
-    color: #FFF;
 }
 .ngw-container.Mist{
     background: url("../images/mist.jpg");
@@ -160,18 +164,20 @@
 .ngw-icon, .ngw-temp{
     text-align: right;
 }
-.ngw-icon > i {
+.ngw-container .ngw-icon > i {
     font-size: 70px;
 }
-.ngw-temp > span{
+.ngw-container .ngw-temp > span{
     font-size: 30px;
     font-weight: bold;
 }
 .ngw-location {
     text-align: right;
 }
-.ngw-updatedAt{
-    text-transform: uppercase;
+.ngw-container .ngw-updatedAt{
     text-align: right;
+}
+.ngw-container .ngw-updatedAt > *{
+    text-transform: uppercase;
     font-size: 10px;
 }
